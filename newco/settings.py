@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+import dj_database_url
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,7 +27,10 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+# Setup Database
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL', 'postgres://localhost/newco')),
+}
 # Application definition
 
 INSTALLED_APPS = (
@@ -37,6 +41,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'newco.apps.clients',
+    'newco.apps.profiles',
+    'newco.apps.posts',
     'south',
 )
 
@@ -49,6 +56,18 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
+
+# List of callables that know how to import templates from various sources.
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
+
+
 ROOT_URLCONF = 'newco.urls'
 
 WSGI_APPLICATION = 'newco.wsgi.application'
@@ -56,13 +75,6 @@ WSGI_APPLICATION = 'newco.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/

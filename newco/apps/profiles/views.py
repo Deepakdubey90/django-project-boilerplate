@@ -7,7 +7,7 @@ from newco.apps.profiles.forms import ProfileForm
 def add_profile(request):
 
     if request.method == "POST":
-        form = ProfileForm(request.POST)
+        form = ProfileForm(request.POST, request.FILES)
         if form.is_valid():
 
             # commit=False means the form doesn't save at this time.

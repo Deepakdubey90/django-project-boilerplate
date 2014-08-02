@@ -2,4 +2,5 @@
 *.pyc
 node_modules/*
 static/*
+media/*
 newco/static/newco/vendor

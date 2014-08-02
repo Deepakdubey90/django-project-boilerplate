@@ -106,6 +106,10 @@ STATICFILES_DIRS = (
 )
 
 STATIC_URL = "/static/"
+MEDIA_URL =  "/media/"
+MEDIA_ROOT = os.path.join(os.environ.get("WWW_DIR", PROJECT_ROOT), "newco/media")
+
+
 
 STATIC_ROOT = os.path.join(os.environ.get("WWW_DIR", PROJECT_ROOT), "newco/static")
 

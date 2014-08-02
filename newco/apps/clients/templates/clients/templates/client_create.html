@@ -3,12 +3,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <form role="form" class="form-horizontal" enctype="multipart/form-data" action="{{ view.request.get_full_path }}" method="post">{% csrf_token %}
-                {{ form.as_p }}
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-success">Submit</button>
-                </div>
-                </form>
+                {% block title %}{{object_name}} Form{% endblock %}
+                <h3>{% if object %}Updating {{object}}{% else %}Add a new {{object_name}}{% endif %}</h3>
+                <form action="" method="post">{% csrf_token %}
+                <table>
+                {{form}}
+                </table>
+                <input type="submit" value="Save {{object_name}}"/></form>
             </div>
             <div class="col-md-4"></div>
         </div>

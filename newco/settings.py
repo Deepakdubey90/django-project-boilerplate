@@ -13,6 +13,23 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 import dj_database_url
 
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
+
+PROJECT_ROOT = os.sep.join(os.path.abspath(os.path.dirname(__file__))\
+                     .split(os.sep)[:-2])
+
+APP_ROOT = os.sep.join(os.path.abspath(os.path.dirname(__file__))\
+                     .split(os.sep)[:-1])
+
+INTERNAL_IPS = (
+    "127.0.0.1"
+    )
+
+
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, "newco/templates"),
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -44,6 +61,7 @@ INSTALLED_APPS = (
     'newco.apps.clients',
     'newco.apps.profiles',
     'newco.apps.posts',
+    'newco.apps.dashboard',
     'south',
 )
 
@@ -61,16 +79,35 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
-# List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
+#     'django.template.loaders.eggs.Loader',
 )
 
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.request',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.contrib.messages.context_processors.messages',
+)
 
 ROOT_URLCONF = 'newco.urls'
 
 WSGI_APPLICATION = 'newco.wsgi.application'
+
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "newco/static"),
+)
+
+STATIC_URL = "/static/"
+
+STATIC_ROOT = os.path.join(os.environ.get("WWW_DIR", PROJECT_ROOT), "newco/static")
 
 
 # Database

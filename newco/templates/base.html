@@ -1,0 +1,29 @@
+{% load staticfiles %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<head>
+    <title>{% block _title %} {% endblock %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!--[if gt IE 8]><!--><meta name="viewport" content="width=device-width, initial-scale=1"><!--<![endif]-->
+    <meta name="csrf-token" content="{{csrf_token}}">
+    <meta name="description" content="{% block _description %}{% endblock %}">
+    <meta name="keywords" content="{% block _keywords %}{% endblock %}">
+    <meta name="author" content="Vinit Kumar">
+    {% if debug %}
+        <link rel="stylesheet/less" href="{% static 'newco/css/styles.less' %}"/>
+        <script src="{% static 'newco/vendor/less/dist/less-1.7.4.min.js' %}"></script>
+    {% else %}
+        <link rel="stylesheet/less" href="{% static 'newco/css/styles.css' %}"/>
+    {% endif %}
+
+</head>
+<body>
+{% block content %}
+{% endblock %}
+{% if debug %}
+   <script src="{% static 'newco/vendor/jquery/dist/jquery.js' %}"></script>
+{% else %}
+   <script src="{% static 'newco/js/newco.min.js' %}"></script>
+{% endif %}
+</body>

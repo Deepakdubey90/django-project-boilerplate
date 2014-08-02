@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
+from django.views.generic import ListView
 from newco.apps.clients.forms import ClientForm
 from newco.apps.clients.models import Client
 # Create your views here.
@@ -22,6 +23,10 @@ def add_user(request):
         form = ClientForm()
 
     return render(request, "clients/templates/client_create.html", {'form': form})
+
+
+class ClientListView(ListView):
+    model = Client
 
 def deleteuser(request):
     return HttpResponse('This is not so cool')

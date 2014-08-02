@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <table class="table table-striped">
+                    <tbody>
+                    {% for object in object_list %}
+                        <tr>
+                            <th>Name</th>
+                            <td>{{ object.name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>{{ object.email }}</td>
+                        </tr>
+                        <tr>
+                            <th>Address</th>
+                            <td>{{ object.address }}</td>
+                        </tr>
+
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+{% endblock %}

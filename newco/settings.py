@@ -15,14 +15,17 @@ import dj_database_url
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-TESTING = DEBUG
-THUMBNAIL_DEBUG = DEBUG
 
 PROJECT_ROOT = os.sep.join(os.path.abspath(os.path.dirname(__file__))\
                      .split(os.sep)[:-2])
 
 APP_ROOT = os.sep.join(os.path.abspath(os.path.dirname(__file__))\
                      .split(os.sep)[:-1])
+
+INTERNAL_IPS = (
+    "127.0.0.1"
+    )
+
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, "newco/templates"),

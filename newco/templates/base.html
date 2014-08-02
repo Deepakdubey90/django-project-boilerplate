@@ -10,11 +10,20 @@
     <meta name="description" content="{% block _description %}{% endblock %}">
     <meta name="keywords" content="{% block _keywords %}{% endblock %}">
     <meta name="author" content="Vinit Kumar">
-    <link rel="stylesheet/less" href="{% static 'newco/css/styles.less' %}"/>
-    <script src="{% static 'newco/vendor/less/dist/less-1.7.4.min.js' %}"></script>
+    {% if debug %}
+        <link rel="stylesheet/less" href="{% static 'newco/css/styles.less' %}"/>
+        <script src="{% static 'newco/vendor/less/dist/less-1.7.4.min.js' %}"></script>
+    {% else %}
+        <link rel="stylesheet/less" href="{% static 'newco/css/styles.css' %}"/>
+    {% endif %}
+
 </head>
 <body>
 {% block content %}
 {% endblock %}
-<script src="{% static 'newco/vendor/jquery/dist/jquery.js' %}"></script>
+{% if debug %}
+   <script src="{% static 'newco/vendor/jquery/dist/jquery.js' %}"></script>
+{% else %}
+   <script src="{% static 'newco/js/newco.min.js' %}"></script>
+{% endif %}
 </body>

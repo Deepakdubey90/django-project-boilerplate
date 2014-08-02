@@ -12,5 +12,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^client/', include('newco.apps.clients.urls', namespace='clients')),
     url(r'', include('newco.apps.dashboard.urls', namespace='dashboard')),
+    url(r'^posts/', include('newco.apps.posts.urls', namespace='posts')),
+    url(r'^profiles/', include('newco.apps.profiles.urls', namespace='profiles')),
 
 )

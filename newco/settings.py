@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+import dj_database_url
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,7 +27,10 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+# Setup Database
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL', 'postgres://localhost/newco')),
+}
 # Application definition
 
 INSTALLED_APPS = (

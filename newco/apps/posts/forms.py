@@ -1,8 +1,9 @@
-from django import forms
-from django_extensions.tests.testapp.models import Post
+from django.forms import ModelForm
+from newco.apps.posts.models import Posts
 
 
-class PostForm(forms.ModelForm):
+class PostForm(ModelForm):
     class Meta:
-        model = Post
-        fields = ('title', 'content', 'tags', 'user')
+        model = Posts
+        fields = ('title', 'content', 'tags',)
+        exclude = ('user',)

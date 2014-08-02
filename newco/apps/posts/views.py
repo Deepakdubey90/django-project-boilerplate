@@ -7,7 +7,9 @@ from newco.apps.posts.models import Posts
 
 
 def add_post(request):
-
+    """
+    Add a new post
+    """
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():

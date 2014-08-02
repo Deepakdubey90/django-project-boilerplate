@@ -10,7 +10,6 @@ from newco import settings
 def dashboard(request, *args, **kwargs):
     return render(request, 'dashboard/templates/landing.html')
 
-
 # Session expires after two weeks
 def login(request, *args, **kwargs):
 

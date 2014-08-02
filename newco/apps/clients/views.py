@@ -1,11 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
+from newco import settings
 from newco.apps.clients.forms import ClientForm
 from newco.apps.clients.models import Client
-# Create your views here.
-
-
+#
 
 
 def add_user(request):

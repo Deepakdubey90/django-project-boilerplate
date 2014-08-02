@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import AuthenticationForm
 from .views import (deleteuser, add_user, ClientListView)
 
 urlpatterns = patterns('',

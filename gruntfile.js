@@ -8,7 +8,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       dist: {
-        src: [],
+        src: ['newco/static/newco/js/newco.js', 'newco/static/newco/vendor/jquery/dist/jquery.js', 'newco/static/newco/vendor/jquery/dist/jquery.js', 'newco/static/newco/vendor/bootstrap/dist/js/boostrap.js'],
         dest: 'newco/static/newco/js/<%= pkg.name %>.add.js'
       }
     },

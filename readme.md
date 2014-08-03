@@ -15,9 +15,11 @@ git clone git@github.com:vinitkumar/newco.git
 cd newco
 export PROJECT_NAME='newco'
 mkvirtualenv $PROJECT_NAME -r requirements.txt
+setvirtualenvproject
 npm install
 bower install
 psql -c 'create database newco'
+workon $PROJECT_NAME
 python manage.py syncdb
 python manage.py migrate
 python manage.py collectstatic

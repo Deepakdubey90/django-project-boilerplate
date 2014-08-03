@@ -1,33 +1,39 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="container">
 
-
-
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
-
-      <hr>
-
-      <footer>
-        <p>&copy; Company 2014</p>
-      </footer>
-    </div> <!-- /container -->
-  </body>
+  <div class="starter-template">
+    <h1>NewCO apps</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>App Name</th>
+          <th>Add</th>
+          <th>List</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Clients</td>
+          <td><a href="{% url 'clients:add_user' %}">Add Client</a></td>
+          <td><a href="{% url 'clients:list_users' %}">List Clients</a></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Posts</td>
+          <td><a href="{% url 'posts:post_create' %}">Add Post</a></td>
+          <td><a href="{% url 'posts:list_posts' %}">List Posts</a></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Profiles</td>
+          <td><a href="{% url 'profiles:profile_create' %}">Add Profile</a></td>
+          <td><a href="{% url 'profiles:list_profiles' %}">List Profiles</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div
 {% endblock %}

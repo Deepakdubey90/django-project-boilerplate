@@ -5,5 +5,5 @@ from .views import PostListView, NewPost
 
 urlpatterns = patterns('',
     url(r'add/$', NewPost.as_view(), name='post_create'),
-    url(r'list/$', PostListView.as_view(), name='list posts'),
+    url(r'list/$', PostListView.as_view(), name='list_posts'),
 )

@@ -14,5 +14,5 @@ urlpatterns = patterns('',
     url(r'', include('newco.apps.dashboard.urls', namespace='dashboard')),
     url(r'^posts/', include('newco.apps.posts.urls', namespace='posts')),
     url(r'^profiles/', include('newco.apps.profiles.urls', namespace='profiles')),
-
+    url(r'^apiv1/', include('newco.apps.apiv1.urls', namespace='apiv1')),
 )

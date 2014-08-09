@@ -62,6 +62,7 @@ INSTALLED_APPS = (
     'newco.apps.profiles',
     'newco.apps.posts',
     'newco.apps.dashboard',
+    'rest_framework',
     'south',
 )
 

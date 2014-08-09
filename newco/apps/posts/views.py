@@ -8,6 +8,7 @@ from newco.apps.posts.models import Posts
 
 class PostMixin(object):
     model = Posts
+
     def get_context_data(self, **kwargs):
         kwargs.update({'object_name': 'Posts'})
         return kwargs

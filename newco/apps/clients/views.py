@@ -10,6 +10,7 @@ from newco.apps.clients.models import Client
 
 class ClientMixin(object):
     model = Client
+
     def get_context_data(self, **kwargs):
         kwargs.update({'object_name': 'Client'})
         return kwargs
@@ -23,6 +24,7 @@ class ClientFormMixin(ClientMixin):
 class NewClient(ClientFormMixin, CreateView):
     def get_success_url(self):
         return reverse('dashboard:home')
+
 
 def add_user(request):
 
@@ -43,6 +45,3 @@ def add_user(request):
 
 class ClientListView(ListView):
     model = Client
-
-def deleteuser(request):
-    return HttpResponse('This is not so cool')

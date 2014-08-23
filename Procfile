@@ -1,1 +1,1 @@
-web: gunicorn -w 3 newco.wsgi
+web: gunicorn newco.wsgi

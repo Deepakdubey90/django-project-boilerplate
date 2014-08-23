@@ -31,7 +31,7 @@ python manage.py runserver
 Apply following steps:
 
 - Add a postgres and pgbackups (free tier) to your dyno.
-- Add heroku remote to your git. `git remote add git://heroku.com/app.git`
+- Add heroku remote to your git. `git remote add heroku git://heroku.com/app.git`
 - Add this buildpack (`heroku config:set
   BUILDPACK_URL='git://github.com/heroku/heroku-buildpack-python.git'`).
   This is very important as heroku will read package.json file and consider it

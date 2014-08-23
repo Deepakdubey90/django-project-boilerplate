@@ -26,6 +26,20 @@ python manage.py collectstatic
 python manage.py runserver
 ```
 
+## Deployment to Heroku
+
+Apply following steps:
+
+- Add a postgres and pgbackups (free tier) to your dyno.
+- Add heroku remote to your git. `git remote add git://heroku.com/app.git`
+- Add this buildpack (`heroku config:set
+  BUILDPACK_URL='git://github.com/heroku/heroku-buildpack-python.git'`).
+  This is very important as heroku will read package.json file and consider it
+  a node.js app.
+- Just do your chances and push code to heroku remote like: `git push heroku
+  HEAD:master`
+
+
 ## Issues and Pull Requests:
 
 Feel free to log any issues here https://github.com/vinitkumar/newco/issues.

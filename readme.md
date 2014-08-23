@@ -36,7 +36,7 @@ Apply following steps:
   BUILDPACK_URL='git://github.com/heroku/heroku-buildpack-python.git'`).
   This is very important as heroku will read package.json file and consider it
   a node.js app.
-- Just do your chances and push code to heroku remote like: `git push heroku
+- Just do your changes and push code to heroku remote like: `git push heroku
   HEAD:master`
 
 

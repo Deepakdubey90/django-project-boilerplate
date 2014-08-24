@@ -1,6 +1,9 @@
 from django.conf.urls import patterns, include, url
 
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 admin.autodiscover()
 
@@ -16,3 +19,5 @@ urlpatterns = patterns('',
     url(r'^profiles/', include('newco.apps.profiles.urls', namespace='profiles')),
     url(r'^apiv1/', include('newco.apps.apiv1.urls', namespace='apiv1')),
 )
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

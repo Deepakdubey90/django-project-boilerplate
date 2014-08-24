@@ -40,6 +40,14 @@ Apply following steps:
   HEAD:master`
 
 
+## Code Quality
+
+Use Pylint with pylint-django plugin:
+
+```
+pylint --load-plugins pylint_django views.py
+```
+
 ## Issues and Pull Requests:
 
 Feel free to log any issues here https://github.com/vinitkumar/newco/issues.

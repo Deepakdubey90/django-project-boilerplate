@@ -1,18 +1,19 @@
+"""Views for Dashboard app"""
 from django.contrib import messages
 from django.shortcuts import render, redirect
 # Create your views here.
-from django.contrib import messages
 from django.contrib.auth import views as auth_views
 # Create your views here.
 from newco import settings
 
 
-def dashboard(request, *args, **kwargs):
+def dashboard(request):
+    """view for dashboard for landing page"""
     return render(request, 'dashboard/templates/landing.html')
 
 # Session expires after two weeks
 def login(request, *args, **kwargs):
-
+    """Login View"""
     if request.user.is_authenticated():
         return redirect('dashboard:home')
 

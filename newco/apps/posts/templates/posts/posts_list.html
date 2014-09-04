@@ -22,6 +22,16 @@
             <th>User</th>
             <td>{{ object.user }}</td>
           </tr>
+           <tr>
+            <th>Time</th>
+            <td>
+             The UTC time is {{ object.time }}
+              {% load tz %}
+              {% localtime on %}
+                The local time is {{ object.time }}
+              {% endlocaltime %}
+            </td>
+          </tr>
         {% endfor %}
         </tbody>
       </table>

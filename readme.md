@@ -23,7 +23,6 @@ npm install
 bower install
 psql -c 'create database newco'
 workon $PROJECT_NAME
-python manage.py syncdb
 python manage.py migrate
 python manage.py collectstatic
 python manage.py runserver

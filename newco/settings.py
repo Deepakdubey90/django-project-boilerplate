@@ -62,9 +62,7 @@ INSTALLED_APPS = (
     'newco.apps.profiles',
     'newco.apps.posts',
     'newco.apps.dashboard',
-    'rest_framework',
     'easy_timezones',
-    'south',
 )
 
 MIDDLEWARE_CLASSES = (

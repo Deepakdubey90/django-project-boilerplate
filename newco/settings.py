@@ -63,6 +63,7 @@ INSTALLED_APPS = (
     'newco.apps.posts',
     'newco.apps.dashboard',
     'rest_framework',
+    'easy_timezones',
     'south',
 )
 
@@ -73,7 +74,9 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'easy_timezones.middleware.EasyTimezoneMiddleware',
 )
+
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -114,7 +117,7 @@ MEDIA_ROOT = os.path.join(os.environ.get("WWW_DIR", PROJECT_ROOT), "newco/media"
 
 STATIC_ROOT = os.path.join(os.environ.get("WWW_DIR", PROJECT_ROOT), "newco/static")
 
-
+GEOIP_DATABASE = STATIC_ROOT + '/data/GeoLiteCity.dat'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 

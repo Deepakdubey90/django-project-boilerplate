@@ -116,7 +116,6 @@ MEDIA_ROOT = os.path.join(os.environ.get("WWW_DIR", PROJECT_ROOT), "newco/media"
 STATIC_ROOT = os.path.join(os.environ.get("WWW_DIR", PROJECT_ROOT), "newco/static")
 
 GEOIP_DATABASE =  APP_ROOT + '/newco/generic/db/GeoLiteCity.dat'
-print GEOIP_DATABASE
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 

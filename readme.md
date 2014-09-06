@@ -5,7 +5,7 @@ Status](https://travis-ci.org/vinitkumar/newco.svg)](https://travis-ci.org/vinit
 
 NewCo is a Django app boilerplate with good configuration. If you have
 a Django based backend that interacts with Client Side MVC or if you
-have a app that renders everything from backend, it would help you in both
+have an app that renders everything from backend, it would help you in both
 cases.
 
 

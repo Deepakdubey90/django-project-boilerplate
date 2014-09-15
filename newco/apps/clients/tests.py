@@ -8,4 +8,4 @@ class ClientTestCase(TestCase):
 
     def test_clients_are_created(self):
         client1 = Client.objects.get(name='test user1')
-        self.assertEqual(client1.id, 2)
+        self.assertEqual(client1.name, 'test user1')

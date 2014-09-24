@@ -26,7 +26,7 @@
             <th>Time</th>
             <td>
               {% load tz %}
-              The UTC time is {{ object.time }}
+              The UTC time is {{ object.time|utc }}
               {% localtime on %}
                 The local time is {{ object.time }}
               {% endlocaltime %}

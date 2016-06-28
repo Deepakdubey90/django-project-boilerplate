@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/vinitkumar/django-project-boilerplate.svg?branch=master)](https://travis-ci.org/vinitkumar/django-project-boilerplate)
 
+[![Coverage Status](https://coveralls.io/repos/github/vinitkumar/django-project-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/vinitkumar/django-project-boilerplate?branch=master)
+
 Django project boilerplate has the best of both worlds.
 - Django-1.9
 - Python-3.5.0

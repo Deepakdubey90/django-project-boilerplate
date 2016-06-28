@@ -1,7 +1,7 @@
 """views for clients"""
 from django.core.urlresolvers import reverse
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, FormView
 from newco.apps.clients.forms import ClientForm
 from newco.apps.clients.models import Client
 #
@@ -23,7 +23,9 @@ class ClientFormMixin(ClientMixin):
     template_name = 'clients/templates/client_create.html'
 
 
-class NewClient(ClientFormMixin, CreateView):
+class NewClient(FormView):
+    form_class = ClientForm
+    template_name = 'clients/templates/client_create.html'
     """New Client View"""
     def get_success_url(self):
         return reverse('dashboard:home')

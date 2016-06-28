@@ -3,29 +3,15 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, FormView
 from newco.apps.profiles.forms import ProfileForm
 from newco.apps.profiles.models import UserProfile
 
-
-class ProfileMixin(object):
-    """profile mixin"""
-    model = UserProfile
-    def get_context_data(self, **kwargs):
-        """set UserProfile in context object"""
-        kwargs.update({'object_name': 'UserProfile'})
-        return kwargs
-
-
-
-class ProfileFormMixin(ProfileMixin):
-    """profile form mixin"""
+class NewProfile(FormView):
+    """new profile view"""
     form_class = ProfileForm
     template_name = 'profiles/templates/profile_create.html'
 
-
-class NewProfile(ProfileFormMixin, CreateView):
-    """new profile view"""
     def get_success_url(self):
         return reverse('dashboard:home')
 

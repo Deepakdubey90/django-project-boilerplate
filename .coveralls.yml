@@ -1,2 +1,4 @@
 repo_token: NoXsXGXrfazRWZKQz7yNOXXLNavblcro3
+service_name: travis-ci
+parallel: true
 

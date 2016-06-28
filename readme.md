@@ -52,7 +52,7 @@ pylint --load-plugins pylint_django views.py
 
 ## Issues and Pull Requests:
 
-Feel free to log any issues here https://github.com/vinitkumar/newco/issues.
+Feel free to log any issues here https://github.com/vinitkumar/django-project-boilerplate/issues
 If you wish to contribute, fork and send a pull request.
 
 ## Warning

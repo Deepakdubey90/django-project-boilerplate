@@ -4,8 +4,8 @@
 <div class="container post-container">
   <div class="row">
     <div class="col-md-8">
-      <form role="form" class="form-horizontal" enctype="multipart/form-data" action="{{ view.request.get_full_path }}" method="post">{% csrf_token %}
-      {{ form }}
+      <form role="form" class="form-control form-horizontal" enctype="multipart/form-data" action="{{ view.request.get_full_path }}" method="post">{% csrf_token %}
+      {{ form.as_p }}
       <div class="form-actions">
           <button type="submit" class="btn btn-success">Submit</button>
       </div>

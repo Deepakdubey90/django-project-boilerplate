@@ -52,4 +52,5 @@ def add_user(request):
 
 class ClientListView(ListView):
     """List View for Client"""
+    # template_name = 'clients/templates/client_list.html'
     model = Client

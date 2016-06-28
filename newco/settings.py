@@ -61,7 +61,6 @@ INSTALLED_APPS = (
     'newco.apps.profiles',
     'newco.apps.posts',
     'newco.apps.dashboard',
-    'easy_timezones',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -71,7 +70,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'easy_timezones.middleware.EasyTimezoneMiddleware',
 )
 
 

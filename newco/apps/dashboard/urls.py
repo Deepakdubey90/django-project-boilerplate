@@ -3,9 +3,9 @@ from .forms import CustomAuthenticationForm
 from django.core.urlresolvers import reverse_lazy as reverse
 from .views import dashboard, login
 
-urlpatterns = patterns('',
+urlpatterns = [
     url(r'^$', dashboard, name='home'),
     url('^login/$', login, {'authentication_form': CustomAuthenticationForm }, name='login'),
-)
+]
 
 

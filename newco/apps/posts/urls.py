@@ -3,7 +3,7 @@ from django.core.urlresolvers import reverse_lazy as reverse
 from newco.apps import posts
 from .views import PostListView, NewPost
 
-urlpatterns = patterns('',
+urlpatterns = [
     url(r'add/$', NewPost.as_view(), name='post_create'),
     url(r'list/$', PostListView.as_view(), name='list_posts'),
-)
+]

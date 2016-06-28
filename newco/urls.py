@@ -7,7 +7,7 @@ from django.conf.urls.static import static
 
 admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = [
     # Examples:
     # url(r'^$', 'newco.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
@@ -18,10 +18,6 @@ urlpatterns = patterns('',
     url(r'^posts/', include('newco.apps.posts.urls', namespace='posts')),
     url(r'^profiles/', include('newco.apps.profiles.urls', namespace='profiles')),
     url(r'^apiv1/', include('newco.apps.apiv1.urls', namespace='apiv1')),
-)
-
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

@@ -16,11 +16,10 @@ import dj_database_url
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-PROJECT_ROOT = os.sep.join(os.path.abspath(os.path.dirname(__file__))\
-                     .split(os.sep)[:-2])
+PROJECT_ROOT = os.sep.join(os.path.abspath(os.path.dirname(__file__)).split(os.sep)[:-1])
 
 APP_ROOT = os.sep.join(os.path.abspath(os.path.dirname(__file__))\
-                     .split(os.sep)[:-1])
+                     .split(os.sep))
 
 INTERNAL_IPS = (
     "127.0.0.1"
@@ -109,13 +108,13 @@ STATICFILES_DIRS = (
 
 STATIC_URL = "/static/"
 MEDIA_URL =  "/media/"
-MEDIA_ROOT = os.path.join(os.environ.get("WWW_DIR", PROJECT_ROOT), "newco/media")
+MEDIA_ROOT = os.path.join(os.environ.get("WWW_DIR", PROJECT_ROOT), "media")
 
 
 
-STATIC_ROOT = os.path.join(os.environ.get("WWW_DIR", PROJECT_ROOT), "newco/static")
+STATIC_ROOT = os.path.join(os.environ.get("WWW_DIR", PROJECT_ROOT), "static")
 
-GEOIP_DATABASE =  APP_ROOT + '/newco/generic/db/GeoLiteCity.dat'
+GEOIP_DATABASE =  APP_ROOT + '/generic/db/GeoLiteCity.dat'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 

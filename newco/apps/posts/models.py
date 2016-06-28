@@ -9,4 +9,4 @@ class Posts(models.Model):
     content = models.TextField(max_length='500', verbose_name='Post Content')
     tags = models.CharField(max_length=90, null=True, blank=True, verbose_name='tags')
     user = models.ForeignKey('clients.Client', related_name='user',)
-    time = models.DateTimeField(auto_now=True, auto_now_add=True)
+    time = models.DateTimeField(auto_now_add=True)

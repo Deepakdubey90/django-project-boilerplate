@@ -1,14 +1,8 @@
 language: python
+services:
+   - postgresql
 python:
-    - 2.7
+    - 3.5.0
 install: "pip install -r requirements.txt"
 script:
   - python manage.py test -v2
-
-# Handle git submodules yourself
-git:
-    submodules: false
-# Use sed to replace the SSH URL with the public URL, then initialize submodules
-before_install:
-    - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
-    - git submodule update --init --recursive

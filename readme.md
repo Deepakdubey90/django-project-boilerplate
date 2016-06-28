@@ -1,11 +1,12 @@
-#NewCo
+# Django Project Boilerplate
 
 [![Build Status](https://travis-ci.org/vinitkumar/django-project-boilerplate.svg?branch=master)](https://travis-ci.org/vinitkumar/django-project-boilerplate)
 
-NewCo is a Django app boilerplate with good configuration. If you have
-a Django based backend that interacts with Client Side MVC or if you
-have an app that renders everything from backend, it would help you in both
-cases.
+Django project boilerplate has the best of both worlds.
+- Django-1.9
+- Python-3.5.0
+- Travis
+- Bower
 
 
 ## Installation
@@ -13,9 +14,9 @@ cases.
 Following are the installation instructions:
 
 ```sh
-git clone git@github.com:vinitkumar/newco.git
-cd newco
-export PROJECT_NAME='newco'
+git clone git@github.com:vinitkumar/django-project-boilerplate.git
+cd django-project-boilerplate
+export PROJECT_NAME='django-project-boilerplate'
 mkvirtualenv $PROJECT_NAME -r requirements.txt
 setvirtualenvproject
 npm install

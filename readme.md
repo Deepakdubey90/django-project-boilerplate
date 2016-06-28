@@ -1,7 +1,6 @@
 #NewCo
 
-[![Build
-Status](https://travis-ci.org/vinitkumar/newco.svg)](https://travis-ci.org/vinitkumar/newco)
+[![Build Status](https://travis-ci.org/vinitkumar/django-project-boilerplate.svg?branch=master)](https://travis-ci.org/vinitkumar/django-project-boilerplate)
 
 NewCo is a Django app boilerplate with good configuration. If you have
 a Django based backend that interacts with Client Side MVC or if you

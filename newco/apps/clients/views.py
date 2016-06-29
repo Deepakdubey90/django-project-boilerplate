@@ -2,8 +2,11 @@
 from django.core.urlresolvers import reverse
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, CreateView
+
 from newco.apps.clients.forms import ClientForm
 from newco.apps.clients.models import Client
+
+
 #
 
 
@@ -23,8 +26,10 @@ class ClientFormMixin(ClientMixin):
     template_name = 'clients/templates/client_create.html'
 
 
-class NewClient(ClientFormMixin, CreateView):
-    """New Client View"""
+class NewClient(CreateView):
+    model = Client
+    fields = ['name', 'email', 'address']
+
     def get_success_url(self):
         return reverse('dashboard:home')
 
@@ -50,4 +55,5 @@ def add_user(request):
 
 class ClientListView(ListView):
     """List View for Client"""
+    # template_name = 'clients/templates/client_list.html'
     model = Client

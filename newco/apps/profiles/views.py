@@ -8,24 +8,13 @@ from newco.apps.profiles.forms import ProfileForm
 from newco.apps.profiles.models import UserProfile
 
 
-class ProfileMixin(object):
-    """profile mixin"""
-    model = UserProfile
-    def get_context_data(self, **kwargs):
-        """set UserProfile in context object"""
-        kwargs.update({'object_name': 'UserProfile'})
-        return kwargs
-
-
-
-class ProfileFormMixin(ProfileMixin):
-    """profile form mixin"""
-    form_class = ProfileForm
-    template_name = 'profiles/templates/profile_create.html'
-
-
-class NewProfile(ProfileFormMixin, CreateView):
+class NewProfile(CreateView):
     """new profile view"""
+    model = UserProfile
+    fields = ['profile_user', 'picture', 'status', 'info']
+
+    # template_name = 'profiles/templates/profile_create.html'
+
     def get_success_url(self):
         return reverse('dashboard:home')
 

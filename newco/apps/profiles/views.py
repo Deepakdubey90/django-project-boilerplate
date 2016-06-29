@@ -19,19 +19,6 @@ class NewProfile(CreateView):
         return reverse('dashboard:home')
 
 
-def add_profile(request):
-    """add profile view function"""
-    if request.method == "POST":
-        form = ProfileForm(request.POST, request.FILES)
-        if form.is_valid():
-            model_instance = form.save(commit=False)
-            model_instance.save()
-            return redirect('/')
-    else:
-        form = ProfileForm()
-    return render(request, "profiles/templates/profile_create.html",
-                  {'form': form})
-
 class ProfileList(ListView):
     """Profile List View"""
     model = UserProfile

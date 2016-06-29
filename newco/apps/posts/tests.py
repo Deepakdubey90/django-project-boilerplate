@@ -1,22 +1,30 @@
 from django.test import TestCase
 from .models import Posts
 from newco.apps.clients.models import Client
+from django.core.urlresolvers import reverse_lazy as reverse
 
-
-class PostTestCase(TestCase):
-
-    def setUp(self):
-        Client.objects.create(name='new user', email='new@gmail.com',
-                              address='new address')
-        Posts.objects.create(title='New Post', content='Dummy content',
-                             user=Client.objects.get(name='new user'))
+class PostCreateTestCase(TestCase):
 
     def test_post_creation(self):
         """
         Test if posts are created.
         """
-        client1 = Client.objects.get(name='new user')
-        post = Posts.objects.get(user=client1)
-        # a post would only be created if it has the id, in this case 1
-        self.assertEqual(post.id, 1)
+        client = Client.objects.create(name='test user1', email='test@example.com', address='example address')
+        resp = self.client.post(reverse('posts:post_create'), data={'title': 'Yo', 'content': 'done', 'user': client})
+        self.assertEqual(resp.status_code, 200)
 
+
+
+class PostListTestCase(TestCase):
+
+    def test_post_list_creation(self):
+        """
+        Test if posts are created.
+        """
+        client = Client.objects.create(name='test user1', email='test@example.com', address='example address')
+        Posts.objects.create(title='Yo', content='done', user=client)
+        Posts.objects.create(title='Go', content='done', user=client)
+        resp = self.client.get(reverse('posts:list_posts'))
+        self.assertContains(resp, 'Yo')
+        self.assertContains(resp, 'Go')
+        self.assertEqual(resp.status_code, 200)

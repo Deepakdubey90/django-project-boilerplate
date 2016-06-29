@@ -5,27 +5,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import views as auth_views
 # Create your views here.
 from newco import settings
+from django.contrib.auth import authenticate
+from django.core.urlresolvers import reverse
 
-
-def dashboard(request):
+def home(request):
     """view for dashboard for landing page"""
+    if not request.user.is_authenticated():
+        return redirect(reverse('dashboard:login'))
     return render(request, 'dashboard/templates/landing.html')
-
-# Session expires after two weeks
-def login(request, *args, **kwargs):
-    """Login View"""
-    if request.user.is_authenticated():
-        return redirect('dashboard:home')
-
-    if request.method == 'POST':
-        if request.POST.get('remember_me', None):
-            request.session.set_expiry(settings.SESSION_COOKIE_AGE)
-
-    if request.method == 'GET':
-        message = request.GET.get('message', None)
-        if message:
-            messages.error(request, message)
-
-    return auth_views.login(request, *args, **kwargs)
-
-

@@ -1,20 +1,8 @@
-"""
-Django settings for newco project.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/1.6/topics/settings/
-
-For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.6/ref/settings/
-"""
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 import dj_database_url
 
 DEBUG = True
-# TEMPLATE_DEBUG = DEBUG
 
 PROJECT_ROOT = os.sep.join(os.path.abspath(os.path.dirname(__file__)).split(os.sep)[:-1])
 
@@ -25,18 +13,8 @@ INTERNAL_IPS = (
     "127.0.0.1"
     )
 
-
-# TEMPLATE_DIRS = (
-#     os.path.join(BASE_DIR, "newco/templates"),
-# )
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 's90=w$eoq*f_y-(7nvz=8ydjx_8#j(kcx20$51=gv@@wh9c0k^'
 
-# TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -66,6 +44,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -75,6 +54,8 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
+
+LOGIN_REDIRECT_URL = '/'
 
 # TEMPLATE_LOADERS = (
 #     'django.template.loaders.filesystem.Loader',

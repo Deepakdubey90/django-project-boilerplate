@@ -4,12 +4,10 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/vinitkumar/django-project-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/vinitkumar/django-project-boilerplate?branch=master)
 
-Django project boilerplate has the best of both worlds.
-- Django-1.9
-- Python-3.5.0
-- Travis
-- Bower
+The project is an example of using latest cutting edge and supported technology. I wrote it for myself to experiment
+with a Python-3.5.0 project and has all good things included such as test coverage and builds with travis and coveralls.
 
+I am using bower to maintain frontend libraries/frameworks. Django rest framework for APIs.
 
 ## Installation
 

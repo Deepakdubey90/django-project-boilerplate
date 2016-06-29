@@ -1,5 +1,4 @@
-from django.conf.urls import patterns, include, url
-from .forms import CustomAuthenticationForm
+from django.conf.urls import url
 from .views import home
 from django.contrib.auth.views import login, logout_then_login
 

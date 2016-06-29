@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{object_name}} Form{% endblock %}
+{% block content %}
+    <div class="container user-container">
+        <div class="row">
+            <div class="col-md-8">
+                <h3>{% if object %}Updating {{object}}{% else %}Add a new {{object_name}}{% endif %}</h3>
+                <form action="" method="post" class="form-horizontal">{% csrf_token %}
+                {{ form.as_p}}
+                <input type="submit" class="btn btn-lg btn-success" value="Save {{object_name}}"/></form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+{% endblock %}

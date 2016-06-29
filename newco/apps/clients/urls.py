@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
-from .views import (add_user, ClientListView, NewClient)
+from .views import (ClientListView, NewClient)
 
 urlpatterns = [
     url(r'^add/$', NewClient.as_view(), name='add_user'),

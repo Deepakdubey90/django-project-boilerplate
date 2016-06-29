@@ -1,11 +1,12 @@
 from django.conf.urls import patterns, include, url
 from .forms import CustomAuthenticationForm
-from django.core.urlresolvers import reverse_lazy as reverse
-from .views import dashboard, login
+from .views import home
+from django.contrib.auth.views import login, logout_then_login
 
 urlpatterns = [
-    url(r'^$', dashboard, name='home'),
-    url('^login/$', login, {'authentication_form': CustomAuthenticationForm }, name='login'),
+    url(r'^$', home, name='home'),
+    url('^login/$', login, name='login'),
+    url('^logout/$', logout_then_login, name='logout'),
 ]
 
 

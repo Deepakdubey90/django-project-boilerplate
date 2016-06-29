@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{{object_name}} Form{% endblock %}
+{% block content %}
+<div class="container profile-container">
+  <div class="row">
+    <div class="col-md-8">
+      <form role="form" class="form-horizontal" enctype="multipart/form-data" action="{{ view.request.get_full_path }}" method="post">{% csrf_token %}
+      {{ form.as_p }}
+      <div class="form-actions">
+          <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+      </form>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>
+{% endblock %}

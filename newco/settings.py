@@ -36,9 +36,6 @@ INTERNAL_IPS = (
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 's90=w$eoq*f_y-(7nvz=8ydjx_8#j(kcx20$51=gv@@wh9c0k^'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
 # TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -56,6 +53,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
     'rest_framework',
     'newco.apps.clients',
     'newco.apps.profiles',
@@ -158,5 +156,3 @@ SESSION_COOKIE_AGE = 7
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
-
-STATIC_URL = '/static/'

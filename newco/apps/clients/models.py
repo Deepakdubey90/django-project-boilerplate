@@ -1,5 +1,4 @@
 from django.db import models
-from django.template.defaultfilters import slugify
 
 
 class Client(models.Model):
@@ -13,6 +12,9 @@ class Client(models.Model):
 
     class Meta:
         verbose_name_plural = 'clients'
+
+    def __str__(self):
+        return self.name
 
     def __unicode__(self):
         return u"%s" % self.name

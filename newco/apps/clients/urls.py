@@ -1,6 +1,4 @@
-from django.conf.urls import patterns, include, url
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import AuthenticationForm
+from django.conf.urls import url
 from .views import (ClientListView, NewClient)
 
 urlpatterns = [

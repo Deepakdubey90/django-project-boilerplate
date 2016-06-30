@@ -16,5 +16,3 @@ class Client(models.Model):
     def __str__(self):
         return self.name
 
-    def __unicode__(self):
-        return u"%s" % self.name

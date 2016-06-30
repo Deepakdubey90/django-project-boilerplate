@@ -11,9 +11,11 @@ class DashboardPageTestCase(TestCase):
 
 class DashboardLoginTestCase(TestCase):
     def test_login(self):
-        user = User.objects.create_user(username='vinit', password='linux')
-        resp = self.client.post(reverse('dashboard:login'), data={'username': 'root', 'password': 'linux'})
+        User.objects.create_user(username='vinit', password='linux')
+        resp = self.client.post(reverse('dashboard:login'),
+                                data={'username': 'root', 'password': 'linux'})
         self.assertEqual(resp.status_code, 200)
-        resp = self.client.post(reverse('dashboard:login'), data={'username': 'vinit', 'password': 'linux'})
+        resp = self.client.post(reverse('dashboard:login'),
+                                data={'username': 'vinit', 'password': 'linux'})
         self.assertEqual(resp.status_code, 302)
 

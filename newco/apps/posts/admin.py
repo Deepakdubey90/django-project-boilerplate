@@ -10,3 +10,4 @@ class PostAdmin(admin.ModelAdmin):
     list_filter = ('user', 'title',)
 
 admin.site.register(Posts, PostAdmin)
+

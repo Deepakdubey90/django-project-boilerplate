@@ -1,9 +1,6 @@
 """views for clients"""
 from django.core.urlresolvers import reverse
-from django.shortcuts import render, redirect
 from django.views.generic import ListView, CreateView
-
-from newco.apps.clients.forms import ClientForm
 from newco.apps.clients.models import Client
 
 

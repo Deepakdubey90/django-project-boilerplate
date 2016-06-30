@@ -1,6 +1,6 @@
 from django.conf.urls import url
-from .views import home
 from django.contrib.auth.views import login, logout_then_login
+from newco.apps.dashboard.views import home
 
 urlpatterns = [
     url(r'^$', home, name='home'),

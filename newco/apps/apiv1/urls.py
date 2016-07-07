@@ -1,13 +1,11 @@
-from django.conf.urls import patterns, url, include
-from rest_framework import routers
-from newco.apps.apiv1 import views
+from django.conf.urls import url, include
 
-router = routers.DefaultRouter()
-router.register(r'post', views.PostViewSet)
-router.register(r'profile', views.ProfileViewSet)
-router.register(r'user', views.UserViewSet)
+from newco.apps.apiv1.views import UserListView, PostListView, UserProfileListView
 
 urlpatterns = [
-    url(r'^', include(router.urls)),
+    url(r'users', UserListView.as_view()),
+    url(r'posts', PostListView.as_view()),
+    url(r'profiles', UserProfileListView.as_view()),
+
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

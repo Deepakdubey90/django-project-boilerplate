@@ -1,35 +1,26 @@
 """ Views for Api"""
-from rest_framework import viewsets
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 # Create your views here.
 from newco.apps.clients.models import Client
-from newco.apps.apiv1.serializers import (UserSerializers, PostSerializers,
-                                          ProfileSerializers)
 from newco.apps.posts.models import Posts
 from newco.apps.profiles.models import UserProfile
 
 
-class UserViewSet(viewsets.ModelViewSet):
-    """User View Set"""
-    def __init__(self):
-        pass
-
-    queryset = Client.objects.all()
-    serializer_class = UserSerializers
+class UserListView(APIView):
+    def get(self, request, format=None):
+        usernames = [{'name': client.name} for client in Client.objects.all()]
+        return Response(usernames)
 
 
-class ProfileViewSet(viewsets.ModelViewSet):
-    """ Profile View Set"""
-    def __init__(self):
-        pass
-
-    queryset = UserProfile.objects.all()
-    serializer_class = ProfileSerializers
+class PostListView(APIView):
+    def get(self, request, format=None):
+        titles = [{'title': post.title} for post in Posts.objects.all()]
+        return Response(titles)
 
 
-class PostViewSet(viewsets.ModelViewSet):
-    """ Post View Set"""
-    def __init__(self):
-        pass
-    queryset = Posts.objects.all()
-    serializer_class = PostSerializers
+class UserProfileListView(APIView):
+    def get(self, request, format=None):
+        usernames = [{'profile_user_name': userprofile.profile_user.name} for userprofile in UserProfile.objects.all()]
+        return Response(usernames)

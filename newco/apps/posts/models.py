@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.postgres.fields import JSONField
 
 
 class Posts(models.Model):
@@ -11,3 +12,4 @@ class Posts(models.Model):
                             verbose_name='tags')
     user = models.ForeignKey('clients.Client', related_name='user',)
     time = models.DateTimeField(auto_now_add=True)
+    data = JSONField(null=True)

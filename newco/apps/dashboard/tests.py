@@ -1,6 +1,8 @@
 from django.test import TestCase
 from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
+
+
 # Create your tests here.
 
 class DashboardPageTestCase(TestCase):
@@ -18,4 +20,3 @@ class DashboardLoginTestCase(TestCase):
         resp = self.client.post(reverse('dashboard:login'),
                                 data={'username': 'vinit', 'password': 'linux'})
         self.assertEqual(resp.status_code, 302)
-

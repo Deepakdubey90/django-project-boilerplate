@@ -4,11 +4,11 @@ from .models import Client
 
 
 class ClientTestCase(TestCase):
-
     def test_clients_are_created(self):
         resp = self.client.post(reverse('clients:add_user'),
                                 data={'name': 'Vinit'})
         self.assertEqual(resp.status_code, 200)
+
 
 class ClientListTestCase(TestCase):
     def setUp(self):

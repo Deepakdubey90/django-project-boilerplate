@@ -5,7 +5,6 @@ from newco.apps.clients.models import Client
 
 
 class PostCreateTestCase(TestCase):
-
     def test_post_creation(self):
         """
         Test if posts are created.
@@ -20,9 +19,7 @@ class PostCreateTestCase(TestCase):
         self.assertEqual(resp.status_code, 200)
 
 
-
 class PostListTestCase(TestCase):
-
     def test_post_list_creation(self):
         """
         Test if posts are created.
